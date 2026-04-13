@@ -1,0 +1,112 @@
+MEDICAL CASE REFERENCES (V2.0 - 100 CASES)
+Note to AI: Use these patterns to match symptoms to the most likely disease and triage level.
+
+Category: Critical & Emergency (Level 1)
+Case 1: Severe Pneumonia | high fever, severe shortness of breath, chest pain, blue lips, confusion | Level: 1
+Case 2: Lung Cancer (Late Stage) | chronic cough, coughing blood, severe chest pain, extreme weight loss, bone pain | Level: 1
+Case 3: Pulmonary Embolism | sudden shortness of breath, sharp chest pain, rapid breathing, dizziness, coughing blood | Level: 1
+Case 4: ARDS (Acute Respiratory Distress) | severe shortness of breath, rapid breathing, confusion, low oxygen levels, extreme fatigue | Level: 1
+Case 5: Pneumothorax (Collapsed Lung) | sudden sharp chest pain, severe shortness of breath, rapid heart rate, blue skin tint | Level: 1
+Case 6: Severe Asthma Attack | gasping for air, wheezing, chest tightness, unable to speak full sentences, blue lips | Level: 1
+Case 7: Anaphylaxis (Severe Allergy) | sudden difficulty breathing, swelling of throat/tongue, rash, rapid pulse, dizziness | Level: 1
+Case 8: Epiglottitis | severe sore throat, drooling, high fever, stridor (noisy breathing), difficulty swallowing | Level: 1
+Case 9: Severe COVID-19 (Respiratory Failure) | high fever, persistent chest pressure, confusion, inability to wake, blue face | Level: 1
+Case 10: Foreign Body Aspiration | sudden choking, inability to breathe or speak, wheezing on one side, cyanosis | Level: 1
+Case 11: Carbon Monoxide Poisoning | shortness of breath, severe headache, confusion, nausea, dizziness, fainting | Level: 1
+Case 12: Cardiac Asthma | severe nighttime shortness of breath, frothy pink sputum, rapid heartbeat, orthopnea | Level: 1
+Case 13: Bacterial Sepsis (Respiratory Origin) | high fever, shivering, rapid breathing, confusion, mottled skin, very low blood pressure | Level: 1
+Case 14: Severe Bronchospasm | chest tightness, silent chest (no air movement), extreme anxiety, neck muscle strain to breathe | Level: 1
+Case 15: Status Asthmaticus | continuous asthma symptoms, not responding to inhaler, extreme exhaustion, confusion | Level: 1
+
+Category: Serious/Urgent (Level 2)
+Case 16: Pneumonia (Bacterial) | high fever, cough with yellow/green mucus, stabbing chest pain, chills, fatigue | Level: 2
+Case 17: Tuberculosis (TB) | chronic cough (3+ weeks), coughing blood, night sweats, unexplained weight loss, low-grade fever | Level: 2
+Case 18: COPD Exacerbation | increased shortness of breath, change in mucus color, heavy wheezing, smoking history | Level: 2
+Case 19: Heart Failure (Congestive) | shortness of breath during exertion, swollen ankles/legs, fatigue, persistent cough | Level: 2
+Case 20: Lung Abscess | fever, cough with foul-smelling sputum, night sweats, chest pain, weight loss | Level: 2
+Case 21: Cystic Fibrosis Exacerbation | persistent salty-tasting skin, heavy mucus, frequent lung infections, poor growth | Level: 2
+Case 22: Emphysema | severe shortness of breath ("pink puffer"), barrel chest, pursed-lip breathing, smoking history | Level: 2
+Case 23: Pleural Effusion | chest pain, dry cough, shortness of breath when lying flat, fever | Level: 2
+Case 24: Bronchiectasis | chronic daily cough, large amounts of foul sputum, shortness of breath, wheezing | Level: 2
+Case 25: Idiopathic Pulmonary Fibrosis | dry hacking cough, gradual shortness of breath, clubbing of fingernails, fatigue | Level: 2
+Case 26: Sarcoidosis | dry cough, shortness of breath, red bumps on skin, swollen lymph nodes, eye pain | Level: 2
+Case 27: Pleurisy | sharp chest pain when breathing or coughing, shortness of breath, dry cough, fever | Level: 2
+Case 28: Legionnaires' Disease | high fever, muscle aches, headache, cough with mucus, shortness of breath | Level: 2
+Case 29: H1N1 (Swine Flu) | high fever, severe cough, sore throat, vomiting/diarrhea, extreme body aches | Level: 2
+Case 30: Interstitial Lung Disease | progressive shortness of breath, dry cough, crackling sound in lungs, fatigue | Level: 2
+Case 31: Occupational Lung Disease (Asbestosis) | history of construction work, dry cough, shortness of breath, chest tightness | Level: 2
+Case 32: Aspiration Pneumonitis | sudden cough after swallowing, fever, shortness of breath, wheezing | Level: 2
+Case 33: Fungal Pneumonia | fever, cough, chest pain, night sweats, history of weakened immune system | Level: 2
+Case 34: Silicosis | history of sand/stone work, chronic cough, severe shortness of breath, chest pain | Level: 2
+Case 35: Mesothelioma | history of asbestos, chest wall pain, shortness of breath, weight loss, lumps under skin | Level: 2
+
+Category: Moderate (Level 3)
+Case 36: Influenza (Flu) | high fever, dry cough, fatigue, headache, body aches, chills, sore throat | Level: 3
+Case 37: COVID-19 (Standard) | moderate fever, loss of taste/smell, fatigue, dry cough, mild shortness of breath | Level: 3
+Case 38: Asthma (Chronic) | episodic wheezing, chest tightness, coughing at night, triggered by dust/cold | Level: 3
+Case 39: Whooping Cough (Pertussis) | severe coughing fits, "whoop" sound, vomiting after coughing, runny nose | Level: 4
+Case 40: Acute Bronchitis | deep cough, clear/white mucus, chest discomfort, mild fever, fatigue | Level: 3
+Case 41: Bronchiolitis (Pediatric/Adult) | wheezing, rapid breathing, persistent cough, irritability, mild fever | Level: 3
+Case 42: Panic Attack | sudden shortness of breath, chest tightness, trembling, sweating, fear of dying | Level: 3
+Case 43: Heat Exhaustion | heavy sweating, dizziness, fatigue, rapid shallow breathing, nausea | Level: 3
+Case 44: Moderate Anemia | shortness of breath during exercise, pale skin, cold hands, brittle nails, fatigue | Level: 3
+Case 45: Sleep Apnea Symptoms | daytime sleepiness, morning headache, loud snoring, waking up gasping | Level: 3
+Case 46: Croup (Pediatric) | barking cough (seal-like), hoarse voice, noisy breathing (stridor), fever | Level: 3
+Case 47: Mycoplasma Pneumonia (Walking Pneumonia) | lingering dry cough, low fever, headache, ear pain, chest soreness | Level: 3
+Case 48: Severe Sinusitis | intense facial pressure, thick yellow nasal discharge, fever, tooth pain, headache | Level: 3
+Case 49: Psittacosis (Bird Fever) | dry cough, fever, headache, muscle aches, history of contact with birds | Level: 3
+Case 50: Q Fever | high fever, severe headache, dry cough, nausea, chest pain | Level: 3
+Case 51: Histoplasmosis | cough, fever, chest pain, joint pain, history of exploring caves/old buildings | Level: 3
+Case 52: Hypersensitivity Pneumonitis | sudden cough, shortness of breath, fever, chills, exposure to mold/dust | Level: 3
+Case 53: Reactive Airway Disease | wheezing and cough after exposure to smoke or chemicals | Level: 3
+Case 54: Eosinophilic Pneumonia | cough, fever, increasing shortness of breath, history of new medications | Level: 3
+Case 55: Moderate Dehydration | dizziness, rapid heart rate, dry skin, dark urine, headache | Level: 3
+
+Category: Mild (Level 4)
+Case 56: Viral Pharyngitis | sore throat, difficulty swallowing, mild cough, swollen neck glands | Level: 4
+Case 57: Laryngitis | hoarse voice, loss of voice, sore throat, tickling in throat, dry cough | Level: 4
+Case 58: Chronic Sinusitis | long-term nasal congestion, facial pressure, post-nasal drip, reduced smell | Level: 4
+Case 59: Mild Flu | low fever, muscle aches, fatigue, runny nose, slight cough | Level: 4
+Case 60: Bacterial Tonsillitis | white patches on tonsils, severe sore throat, fever, swollen lymph nodes | Level: 4
+Case 61: Hay Fever (Severe) | uncontrollable sneezing, itchy red eyes, runny nose, sinus pressure | Level: 4
+Case 62: Upper Respiratory Infection (URI) | congestion, sneezing, sore throat, cough, mild headache | Level: 4
+Case 63: Post-Viral Cough | dry, lingering cough for weeks after a cold, no fever | Level: 4
+Case 64: Nasal Polyps | persistent stuffy nose, mouth breathing, decreased sense of taste | Level: 4
+Case 65: Adenoiditis | snoring, mouth breathing, stuffy nose, glue ear symptoms | Level: 4
+Case 66: Mold Allergy | sneezing, runny nose, itchy throat when in damp environments | Level: 4
+Case 67: Dust Mite Allergy | morning sneezing, itchy nose, watery eyes, stuffy nose | Level: 4
+Case 68: Pet Dander Allergy | itchy eyes, skin rash, sneezing after contact with cats/dogs | Level: 4
+Case 69: Gastroesophageal Reflux (GERD) Cough | dry cough after eating, heartburn, sour taste in mouth | Level: 4
+Case 70: Common Cold with Ear Congestion | runny nose, sore throat, muffled hearing, ear pressure | Level: 4
+Case 71: Oral Thrush (Respiratory Impact) | white coating in mouth, pain when swallowing, hoarseness | Level: 4
+Case 72: Deviated Septum | difficulty breathing through one nostril, nosebleeds, snoring | Level: 4
+Case 73: Phlegm Overload | constant need to clear throat, wet cough, feeling of something stuck | Level: 4
+Case 74: Moderate Allergic Reaction | hives, itchy skin, runny nose, sneezing (no breathing difficulty) | Level: 4
+Case 75: Mild Bronchitis | occasional cough, mild mucus production, clear lungs, no fever | Level: 4
+
+Category: Very Mild (Level 5)
+Case 76: Common Cold (Standard) | runny nose, sneezing, mild sore throat, occasional cough | Level: 5
+Case 77: Allergic Rhinitis (Mild) | clear runny nose, itchy eyes, sneezing, watery eyes | Level: 5
+Case 78: Head Cold | pressure in forehead, blocked nose, mild fatigue | Level: 5
+Case 79: Mild Sneezing Fit | repetitive sneezing due to dust or irritant, no other symptoms | Level: 5
+Case 80: Dry Throat | scratchy feeling in throat, usually after sleeping or talking much | Level: 5
+Case 81: Post-Nasal Drip | frequent throat clearing, feeling of mucus dripping down back of throat | Level: 5
+Case 82: Mild Smoker's Cough | morning cough, small amount of clear phlegm, no shortness of breath | Level: 5
+Case 83: Fatigue (Mild) | feeling tired, needing extra sleep, no respiratory distress | Level: 5
+Case 84: Mild Headache | tension-type headache, no fever, no congestion | Level: 5
+Case 85: Occasional Sneezing | sneezing once or twice a day, likely environment-related | Level: 5
+Case 86: Air Conditioner Irritation | dry nose, mild sore throat in the morning, clears up after drinking water | Level: 5
+Case 87: Perfume/Scent Sensitivity | temporary sneezing or runny nose after exposure to strong smells | Level: 5
+Case 88: Mild Humidity Reaction | feeling slightly "heavy" breathing due to high humidity, no pain | Level: 5
+Case 89: Voice Strain | hoarseness after shouting or singing, no pain | Level: 5
+Case 90: Mild Dust Reaction | itchy nose after cleaning, clears up quickly | Level: 5
+Case 91: Slight Congestion | one nostril blocked, no fever, no pain | Level: 5
+Case 92: Itchy Throat | mild irritation, relieved by warm water | Level: 5
+Case 93: Cold Weather Sensitivity | runny nose when exposed to cold air, stops indoors | Level: 5
+Case 94: Minor Fatigue | feeling slightly drained, no physical pain | Level: 5
+Case 95: Stuffy Nose (Mild) | mild blockage, no impact on daily activities | Level: 5
+Case 96: Clear Nasal Discharge | occasional clear liquid from nose, no sneezing | Level: 5
+Case 97: Dry Cough (Mild) | single cough every few hours, no chest pain | Level: 5
+Case 98: Body Aches (Minor) | slight muscle stiffness, no fever | Level: 5
+Case 99: Watery Eyes (Mild) | eyes tearing up in wind or bright light | Level: 5
+Case 100: Mild Soreness | throat feels slightly raw after eating spicy food | Level: 5
