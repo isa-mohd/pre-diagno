@@ -19,7 +19,7 @@ import 'backend/local_db/local_database_example.dart';
 
 // Keep this false for normal development; when true, startup smoke test can
 // clear local tables as part of its verification flow.
-const bool kRunDbSmokeTestOnStartup = false;
+const bool kRunDbSmokeTestOnStartup = true;
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
