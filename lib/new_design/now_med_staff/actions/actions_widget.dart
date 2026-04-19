@@ -112,15 +112,16 @@ class _ActionsWidgetState extends State<ActionsWidget> {
           ),
           actions: [
             Padding(
-              padding: const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
+              padding:
+                  const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
               child: Row(
                 mainAxisSize: MainAxisSize.max,
                 children: [
                   Align(
                     alignment: const AlignmentDirectional(0.0, 0.0),
                     child: Padding(
-                      padding:
-                          const EdgeInsetsDirectional.fromSTEB(8.0, 0.0, 8.0, 0.0),
+                      padding: const EdgeInsetsDirectional.fromSTEB(
+                          8.0, 0.0, 8.0, 0.0),
                       child: FlutterFlowIconButton(
                         borderRadius: 12.0,
                         buttonSize: 44.0,
@@ -149,7 +150,8 @@ class _ActionsWidgetState extends State<ActionsWidget> {
               mainAxisSize: MainAxisSize.max,
               children: [
                 Padding(
-                  padding: const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
+                  padding: const EdgeInsetsDirectional.fromSTEB(
+                      16.0, 0.0, 16.0, 0.0),
                   child: Container(
                     width: double.infinity,
                     height: 120.0,
@@ -293,7 +295,8 @@ class _ActionsWidgetState extends State<ActionsWidget> {
                   ),
                 ),
                 Padding(
-                  padding: const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
+                  padding: const EdgeInsetsDirectional.fromSTEB(
+                      16.0, 0.0, 16.0, 0.0),
                   child: Container(
                     width: double.infinity,
                     decoration: BoxDecoration(
@@ -347,7 +350,8 @@ class _ActionsWidgetState extends State<ActionsWidget> {
                   ),
                 ),
                 Padding(
-                  padding: const EdgeInsetsDirectional.fromSTEB(16.0, 8.0, 16.0, 0.0),
+                  padding: const EdgeInsetsDirectional.fromSTEB(
+                      16.0, 8.0, 16.0, 0.0),
                   child: Text(
                     'Quick Actions',
                     style: FlutterFlowTheme.of(context).titleMedium.override(
@@ -368,7 +372,8 @@ class _ActionsWidgetState extends State<ActionsWidget> {
                   ),
                 ),
                 Padding(
-                  padding: const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
+                  padding: const EdgeInsetsDirectional.fromSTEB(
+                      16.0, 0.0, 16.0, 0.0),
                   child: Container(
                     width: double.infinity,
                     decoration: BoxDecoration(
@@ -464,8 +469,9 @@ class _ActionsWidgetState extends State<ActionsWidget> {
                                           ),
                                     ),
                                     Padding(
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
-                                          0.0, 4.0, 0.0, 0.0),
+                                      padding:
+                                          const EdgeInsetsDirectional.fromSTEB(
+                                              0.0, 4.0, 0.0, 0.0),
                                       child: Text(
                                         'Dispatch emergency vehicle to patient location immediately',
                                         style: FlutterFlowTheme.of(context)
@@ -591,7 +597,8 @@ class _ActionsWidgetState extends State<ActionsWidget> {
                                               .primaryText,
                                         ),
                                       ),
-                                      duration: const Duration(milliseconds: 4000),
+                                      duration:
+                                          const Duration(milliseconds: 4000),
                                       backgroundColor: const Color(0xFFFF4B4B),
                                     ),
                                   );
@@ -601,8 +608,9 @@ class _ActionsWidgetState extends State<ActionsWidget> {
                                   height: 40.0,
                                   padding: const EdgeInsetsDirectional.fromSTEB(
                                       16.0, 0.0, 16.0, 0.0),
-                                  iconPadding: const EdgeInsetsDirectional.fromSTEB(
-                                      0.0, 0.0, 0.0, 0.0),
+                                  iconPadding:
+                                      const EdgeInsetsDirectional.fromSTEB(
+                                          0.0, 0.0, 0.0, 0.0),
                                   color: const Color(0xFFFF4B4B),
                                   textStyle: FlutterFlowTheme.of(context)
                                       .titleSmall
@@ -638,7 +646,8 @@ class _ActionsWidgetState extends State<ActionsWidget> {
                   ),
                 ),
                 Padding(
-                  padding: const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
+                  padding: const EdgeInsetsDirectional.fromSTEB(
+                      16.0, 0.0, 16.0, 0.0),
                   child: Container(
                     width: double.infinity,
                     decoration: BoxDecoration(
@@ -734,8 +743,9 @@ class _ActionsWidgetState extends State<ActionsWidget> {
                                           ),
                                     ),
                                     Padding(
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
-                                          0.0, 4.0, 0.0, 0.0),
+                                      padding:
+                                          const EdgeInsetsDirectional.fromSTEB(
+                                              0.0, 4.0, 0.0, 0.0),
                                       child: Text(
                                         'Reserve a hospital room or bed for patient admission',
                                         style: FlutterFlowTheme.of(context)
@@ -861,7 +871,8 @@ class _ActionsWidgetState extends State<ActionsWidget> {
                                               .primaryText,
                                         ),
                                       ),
-                                      duration: const Duration(milliseconds: 4000),
+                                      duration:
+                                          const Duration(milliseconds: 4000),
                                       backgroundColor: const Color(0xFF5B8DB8),
                                     ),
                                   );
@@ -871,8 +882,9 @@ class _ActionsWidgetState extends State<ActionsWidget> {
                                   height: 40.0,
                                   padding: const EdgeInsetsDirectional.fromSTEB(
                                       16.0, 0.0, 16.0, 0.0),
-                                  iconPadding: const EdgeInsetsDirectional.fromSTEB(
-                                      0.0, 0.0, 0.0, 0.0),
+                                  iconPadding:
+                                      const EdgeInsetsDirectional.fromSTEB(
+                                          0.0, 0.0, 0.0, 0.0),
                                   color: const Color(0xFF5B8DB8),
                                   textStyle: FlutterFlowTheme.of(context)
                                       .titleSmall
@@ -908,7 +920,8 @@ class _ActionsWidgetState extends State<ActionsWidget> {
                   ),
                 ),
                 Padding(
-                  padding: const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
+                  padding: const EdgeInsetsDirectional.fromSTEB(
+                      16.0, 0.0, 16.0, 0.0),
                   child: Container(
                     width: double.infinity,
                     decoration: BoxDecoration(
@@ -1004,8 +1017,9 @@ class _ActionsWidgetState extends State<ActionsWidget> {
                                           ),
                                     ),
                                     Padding(
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
-                                          0.0, 4.0, 0.0, 0.0),
+                                      padding:
+                                          const EdgeInsetsDirectional.fromSTEB(
+                                              0.0, 4.0, 0.0, 0.0),
                                       child: Text(
                                         'Alert on-duty emergency team about this critical case',
                                         style: FlutterFlowTheme.of(context)
@@ -1131,7 +1145,8 @@ class _ActionsWidgetState extends State<ActionsWidget> {
                                               .primaryText,
                                         ),
                                       ),
-                                      duration: const Duration(milliseconds: 4000),
+                                      duration:
+                                          const Duration(milliseconds: 4000),
                                       backgroundColor: const Color(0xFFF59E0B),
                                     ),
                                   );
@@ -1141,8 +1156,9 @@ class _ActionsWidgetState extends State<ActionsWidget> {
                                   height: 40.0,
                                   padding: const EdgeInsetsDirectional.fromSTEB(
                                       16.0, 0.0, 16.0, 0.0),
-                                  iconPadding: const EdgeInsetsDirectional.fromSTEB(
-                                      0.0, 0.0, 0.0, 0.0),
+                                  iconPadding:
+                                      const EdgeInsetsDirectional.fromSTEB(
+                                          0.0, 0.0, 0.0, 0.0),
                                   color: const Color(0xFFF59E0B),
                                   textStyle: FlutterFlowTheme.of(context)
                                       .titleSmall

@@ -14,7 +14,22 @@ import 'add_employee_model.dart';
 export 'add_employee_model.dart';
 
 class AddEmployeeWidget extends StatefulWidget {
-  const AddEmployeeWidget({super.key});
+  const AddEmployeeWidget({
+    super.key,
+    this.isEditMode = false,
+    this.initialEmployeeId,
+    this.initialName,
+    this.initialEmail,
+    this.initialPassword,
+    this.initialIsAdmin,
+  });
+
+  final bool isEditMode;
+  final String? initialEmployeeId;
+  final String? initialName;
+  final String? initialEmail;
+  final String? initialPassword;
+  final bool? initialIsAdmin;
 
   static String routeName = 'AddEmployee';
   static String routePath = '/addEmployee';
@@ -52,6 +67,22 @@ class _AddEmployeeWidgetState extends State<AddEmployeeWidget> {
 
     _model.textController5 ??= TextEditingController();
     _model.textFieldFocusNode5 ??= FocusNode();
+
+    if (widget.isEditMode) {
+      final initialPassword = widget.initialPassword?.trim() ?? '';
+      _model.textController1?.text = widget.initialEmployeeId?.trim() ?? '';
+      _model.textController2?.text = widget.initialName?.trim() ?? '';
+      _model.textController3?.text = widget.initialEmail?.trim() ?? '';
+      _model.textController4?.text = initialPassword;
+      _model.textController5?.text = initialPassword;
+
+      final initialRole =
+          (widget.initialIsAdmin ?? false) ? 'Admin' : 'Medical Staff';
+      _model.dropDownValueController ??=
+          FormFieldController<String>(initialRole);
+      _model.dropDownValueController?.value = initialRole;
+      _model.dropDownValue = initialRole;
+    }
   }
 
   @override
@@ -187,6 +218,105 @@ class _AddEmployeeWidgetState extends State<AddEmployeeWidget> {
     }
   }
 
+  Future<void> _updateEmployee() async {
+    if (_isSubmitting) {
+      return;
+    }
+
+    FocusScope.of(context).unfocus();
+    safeSetState(() {
+      _formError = null;
+      _roleError = null;
+    });
+
+    final role = _model.dropDownValue;
+    if (role == null || role.isEmpty) {
+      safeSetState(() => _roleError = 'Role is required');
+      return;
+    }
+
+    if (!(_formKey.currentState?.validate() ?? false)) {
+      return;
+    }
+
+    final originalEmployeeId = widget.initialEmployeeId?.trim() ?? '';
+    if (originalEmployeeId.isEmpty) {
+      safeSetState(() => _formError = 'Missing employee ID for update');
+      return;
+    }
+
+    final employeeId = _model.textController1.text.trim();
+    if (employeeId != originalEmployeeId) {
+      safeSetState(() => _formError = 'Employee ID cannot be changed');
+      return;
+    }
+
+    final fullName = _model.textController2.text.trim();
+    final email = _model.textController3.text.trim().toLowerCase();
+    final password = _model.textController4.text;
+    final isAdmin = role == 'Admin';
+
+    safeSetState(() => _isSubmitting = true);
+    try {
+      final db = LocalDatabaseService.instance;
+
+      final allEmployees = await db.getAllEmployees();
+      final duplicateEmail = allEmployees.any(
+        (e) =>
+            e.employeeId != originalEmployeeId &&
+            (e.email ?? '').trim().toLowerCase() == email,
+      );
+      if (duplicateEmail) {
+        safeSetState(() => _formError = 'Email is already registered');
+        return;
+      }
+
+      final updatedRows = await db.updateEmployee(
+        Employee(
+          employeeId: originalEmployeeId,
+          email: email,
+          password: password,
+          name: fullName,
+          isAdmin: isAdmin,
+        ),
+      );
+
+      if (updatedRows == 0) {
+        safeSetState(
+          () =>
+              _formError = 'Employee no longer exists. Refresh and try again.',
+        );
+        return;
+      }
+
+      if (!mounted) {
+        return;
+      }
+
+      showSnackbar(context, 'Employee account updated successfully');
+      context.replaceNamed(StaffAdminManagementPageWidget.routeName);
+    } catch (_) {
+      if (!mounted) {
+        return;
+      }
+      safeSetState(() {
+        _formError = 'Failed to update account. Please try again.';
+      });
+    } finally {
+      if (mounted) {
+        safeSetState(() => _isSubmitting = false);
+      }
+    }
+  }
+
+  Future<void> _submitEmployee() async {
+    if (widget.isEditMode) {
+      await _updateEmployee();
+      return;
+    }
+    await _createEmployee();
+  }
+
   InputDecoration _inputDecoration({
     required BuildContext context,
     required String hint,
@@ -290,7 +420,7 @@ class _AddEmployeeWidgetState extends State<AddEmployeeWidget> {
             },
           ),
           title: Text(
-            'Add New Account',
+            widget.isEditMode ? 'Edit Employee Account' : 'Add New Account',
             style: FlutterFlowTheme.of(context).headlineSmall.override(
                   font: GoogleFonts.interTight(
                     fontWeight: FontWeight.bold,
@@ -361,6 +491,7 @@ class _AddEmployeeWidgetState extends State<AddEmployeeWidget> {
                         TextFormField(
                           controller: _model.textController1,
                           focusNode: _model.textFieldFocusNode1,
+                          readOnly: widget.isEditMode,
                           decoration: _inputDecoration(
                             context: context,
                             hint: 'Enter employee ID',
@@ -679,12 +810,18 @@ class _AddEmployeeWidgetState extends State<AddEmployeeWidget> {
                             borderRadius: BorderRadius.circular(20.0),
                           ),
                           child: FFButtonWidget(
-                            onPressed: _isSubmitting ? null : _createEmployee,
+                            onPressed: _isSubmitting ? null : _submitEmployee,
                             text: _isSubmitting
-                                ? 'Creating...'
-                                : 'Create Employee Account',
-                            icon: const Icon(
-                              Icons.person_add_alt_1_rounded,
+                                ? (widget.isEditMode
+                                    ? 'Updating...'
+                                    : 'Creating...')
+                                : (widget.isEditMode
+                                    ? 'Update Employee Account'
+                                    : 'Create Employee Account'),
+                            icon: Icon(
+                              widget.isEditMode
+                                  ? Icons.edit_note_rounded
+                                  : Icons.person_add_alt_1_rounded,
                               size: 22.0,
                             ),
                             options: FFButtonOptions(

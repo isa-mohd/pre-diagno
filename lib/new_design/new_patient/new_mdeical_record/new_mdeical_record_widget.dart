@@ -106,22 +106,6 @@ class _NewMdeicalRecordWidgetState extends State<NewMdeicalRecordWidget> {
                           FlutterFlowTheme.of(context).titleLarge.fontStyle,
                     ),
               ),
-              Text(
-                'Hussain',
-                style: FlutterFlowTheme.of(context).labelSmall.override(
-                      font: GoogleFonts.inter(
-                        fontWeight: FontWeight.w500,
-                        fontStyle:
-                            FlutterFlowTheme.of(context).labelSmall.fontStyle,
-                      ),
-                      color: const Color(0xFFE8735A),
-                      fontSize: 12.0,
-                      letterSpacing: 0.0,
-                      fontWeight: FontWeight.w500,
-                      fontStyle:
-                          FlutterFlowTheme.of(context).labelSmall.fontStyle,
-                    ),
-              ),
             ],
           ),
           actions: const [],

@@ -1,4 +1,3 @@
-import '/flutter_flow/flutter_flow_animations.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
@@ -7,8 +6,6 @@ import 'dart:math';
 import 'dart:ui';
 import '/index.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/scheduler.dart';
-import 'package:flutter_animate/flutter_animate.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'admin_three_model.dart';
@@ -32,13 +29,10 @@ class AdminThreeWidget extends StatefulWidget {
   State<AdminThreeWidget> createState() => _AdminThreeWidgetState();
 }
 
-class _AdminThreeWidgetState extends State<AdminThreeWidget>
-    with TickerProviderStateMixin {
+class _AdminThreeWidgetState extends State<AdminThreeWidget> {
   late AdminThreeModel _model;
   String _adminName = 'Admin';
   String _adminEmail = 'admin@prediagno.com';
-
-  final animationsMap = <String, AnimationInfo>{};
 
   Future<void> _loadCurrentAdmin() async {
     final employee = await AdminSessionService.getCurrentEmployee();
@@ -68,28 +62,6 @@ class _AdminThreeWidgetState extends State<AdminThreeWidget>
     super.initState();
     _model = createModel(context, () => AdminThreeModel());
     _loadCurrentAdmin();
-
-    animationsMap.addAll({
-      'containerOnActionTriggerAnimation': AnimationInfo(
-        trigger: AnimationTrigger.onActionTrigger,
-        applyInitialState: true,
-        effectsBuilder: () => [
-          MoveEffect(
-            curve: Curves.easeInOut,
-            delay: 0.0.ms,
-            duration: 600.0.ms,
-            begin: const Offset(0.0, 0.0),
-            end: const Offset(115.0, 0.0),
-          ),
-        ],
-      ),
-    });
-    setupAnimations(
-      animationsMap.values.where((anim) =>
-          anim.trigger == AnimationTrigger.onActionTrigger ||
-          !anim.applyInitialState),
-      this,
-    );
   }
 
   @override
@@ -140,7 +112,9 @@ class _AdminThreeWidgetState extends State<AdminThreeWidget>
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               Text(
-                                _adminName.split(" ").length > 2 ? '${_adminName.split(" ")[0]} ${_adminName.split(" ")[1]}' : _adminName,
+                                _adminName.split(" ").length > 2
+                                    ? '${_adminName.split(" ")[0]} ${_adminName.split(" ")[1]}'
+                                    : _adminName,
                                 style: FlutterFlowTheme.of(context)
                                     .titleLarge
                                     .override(
@@ -308,307 +282,6 @@ class _AdminThreeWidgetState extends State<AdminThreeWidget>
                                                 ),
                                               ].divide(
                                                   const SizedBox(width: 16.0)),
-                                            ),
-                                          ),
-                                        ),
-                                      ),
-                                      Align(
-                                        alignment: const AlignmentDirectional(
-                                            0.0, 0.0),
-                                        child: Container(
-                                          width: double.infinity,
-                                          height: 64.8,
-                                          decoration: BoxDecoration(
-                                            color: FlutterFlowTheme.of(context)
-                                                .secondaryBackground,
-                                          ),
-                                          child: Padding(
-                                            padding: const EdgeInsetsDirectional
-                                                .fromSTEB(0.0, 0.0, 0.0, 16.0),
-                                            child: Container(
-                                              width: 250.0,
-                                              height: 50.0,
-                                              decoration: BoxDecoration(
-                                                color: const Color(0xFFF1F4F8),
-                                                borderRadius:
-                                                    BorderRadius.circular(12.0),
-                                                border: Border.all(
-                                                  color:
-                                                      const Color(0xFFE0E3E7),
-                                                  width: 1.0,
-                                                ),
-                                              ),
-                                              child: Padding(
-                                                padding:
-                                                    const EdgeInsets.all(4.0),
-                                                child: Row(
-                                                  mainAxisSize:
-                                                      MainAxisSize.max,
-                                                  mainAxisAlignment:
-                                                      MainAxisAlignment.start,
-                                                  children: [
-                                                    Expanded(
-                                                      child: InkWell(
-                                                        splashColor:
-                                                            Colors.transparent,
-                                                        focusColor:
-                                                            Colors.transparent,
-                                                        hoverColor:
-                                                            Colors.transparent,
-                                                        highlightColor:
-                                                            Colors.transparent,
-                                                        onTap: () async {
-                                                          setDarkModeSetting(
-                                                              context,
-                                                              ThemeMode.light);
-                                                        },
-                                                        child: Container(
-                                                          width: 115.0,
-                                                          height: 100.0,
-                                                          decoration:
-                                                              BoxDecoration(
-                                                            color: Theme.of(context)
-                                                                        .brightness ==
-                                                                    Brightness
-                                                                        .light
-                                                                ? Colors.white
-                                                                : const Color(
-                                                                    0xFFF1F4F8),
-                                                            borderRadius:
-                                                                BorderRadius
-                                                                    .circular(
-                                                                        10.0),
-                                                            border: Border.all(
-                                                              color:
-                                                                  valueOrDefault<
-                                                                      Color>(
-                                                                Theme.of(context)
-                                                                            .brightness ==
-                                                                        Brightness
-                                                                            .light
-                                                                    ? const Color(
-                                                                        0xFFE0E3E7)
-                                                                    : const Color(
-                                                                        0xFFF1F4F8),
-                                                                const Color(
-                                                                    0xFFE0E3E7),
-                                                              ),
-                                                              width: 1.0,
-                                                            ),
-                                                          ),
-                                                          child: InkWell(
-                                                            splashColor: Colors
-                                                                .transparent,
-                                                            focusColor: Colors
-                                                                .transparent,
-                                                            hoverColor: Colors
-                                                                .transparent,
-                                                            highlightColor:
-                                                                Colors
-                                                                    .transparent,
-                                                            onTap: () async {
-                                                              setDarkModeSetting(
-                                                                  context,
-                                                                  ThemeMode
-                                                                      .light);
-                                                            },
-                                                            child: Row(
-                                                              mainAxisSize:
-                                                                  MainAxisSize
-                                                                      .max,
-                                                              mainAxisAlignment:
-                                                                  MainAxisAlignment
-                                                                      .center,
-                                                              children: [
-                                                                Icon(
-                                                                  Icons
-                                                                      .wb_sunny_rounded,
-                                                                  color: Theme.of(context)
-                                                                              .brightness ==
-                                                                          Brightness
-                                                                              .light
-                                                                      ? const Color(
-                                                                          0xFF14181B)
-                                                                      : const Color(
-                                                                          0xFF57636C),
-                                                                  size: 16.0,
-                                                                ),
-                                                                Padding(
-                                                                  padding:
-                                                                      const EdgeInsetsDirectional
-                                                                          .fromSTEB(
-                                                                          4.0,
-                                                                          0.0,
-                                                                          0.0,
-                                                                          0.0),
-                                                                  child: Text(
-                                                                    'Light Mode',
-                                                                    style: FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .bodyMedium
-                                                                        .override(
-                                                                          font:
-                                                                              GoogleFonts.outfit(
-                                                                            fontWeight:
-                                                                                FontWeight.w500,
-                                                                            fontStyle:
-                                                                                FlutterFlowTheme.of(context).bodyMedium.fontStyle,
-                                                                          ),
-                                                                          color: Theme.of(context).brightness == Brightness.light
-                                                                              ? const Color(0xFF14181B)
-                                                                              : const Color(0xFF57636C),
-                                                                          fontSize:
-                                                                              14.0,
-                                                                          letterSpacing:
-                                                                              0.0,
-                                                                          fontWeight:
-                                                                              FontWeight.w500,
-                                                                          fontStyle: FlutterFlowTheme.of(context)
-                                                                              .bodyMedium
-                                                                              .fontStyle,
-                                                                        ),
-                                                                  ),
-                                                                ),
-                                                              ],
-                                                            ),
-                                                          ),
-                                                        ),
-                                                      ),
-                                                    ),
-                                                    Expanded(
-                                                      child: InkWell(
-                                                        splashColor:
-                                                            Colors.transparent,
-                                                        focusColor:
-                                                            Colors.transparent,
-                                                        hoverColor:
-                                                            Colors.transparent,
-                                                        highlightColor:
-                                                            Colors.transparent,
-                                                        onTap: () async {
-                                                          setDarkModeSetting(
-                                                              context,
-                                                              ThemeMode.dark);
-                                                        },
-                                                        child: Container(
-                                                          width: 115.0,
-                                                          height: 100.0,
-                                                          decoration:
-                                                              BoxDecoration(
-                                                            color: Theme.of(context)
-                                                                        .brightness ==
-                                                                    Brightness
-                                                                        .dark
-                                                                ? Colors.white
-                                                                : const Color(
-                                                                    0xFFF1F4F8),
-                                                            borderRadius:
-                                                                BorderRadius
-                                                                    .circular(
-                                                                        10.0),
-                                                            border: Border.all(
-                                                              color:
-                                                                  valueOrDefault<
-                                                                      Color>(
-                                                                Theme.of(context)
-                                                                            .brightness ==
-                                                                        Brightness
-                                                                            .dark
-                                                                    ? const Color(
-                                                                        0xFFE0E3E7)
-                                                                    : const Color(
-                                                                        0xFFF1F4F8),
-                                                                const Color(
-                                                                    0xFFF1F4F8),
-                                                              ),
-                                                              width: 1.0,
-                                                            ),
-                                                          ),
-                                                          child: InkWell(
-                                                            splashColor: Colors
-                                                                .transparent,
-                                                            focusColor: Colors
-                                                                .transparent,
-                                                            hoverColor: Colors
-                                                                .transparent,
-                                                            highlightColor:
-                                                                Colors
-                                                                    .transparent,
-                                                            onTap: () async {
-                                                              setDarkModeSetting(
-                                                                  context,
-                                                                  ThemeMode
-                                                                      .dark);
-                                                            },
-                                                            child: Row(
-                                                              mainAxisSize:
-                                                                  MainAxisSize
-                                                                      .max,
-                                                              mainAxisAlignment:
-                                                                  MainAxisAlignment
-                                                                      .center,
-                                                              children: [
-                                                                Icon(
-                                                                  Icons
-                                                                      .nightlight_round,
-                                                                  color: Theme.of(context)
-                                                                              .brightness ==
-                                                                          Brightness
-                                                                              .dark
-                                                                      ? const Color(
-                                                                          0xFF14181B)
-                                                                      : const Color(
-                                                                          0xFF57636C),
-                                                                  size: 16.0,
-                                                                ),
-                                                                Padding(
-                                                                  padding:
-                                                                      const EdgeInsetsDirectional
-                                                                          .fromSTEB(
-                                                                          4.0,
-                                                                          0.0,
-                                                                          0.0,
-                                                                          0.0),
-                                                                  child: Text(
-                                                                    'Dark Mode',
-                                                                    style: FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .bodyMedium
-                                                                        .override(
-                                                                          font:
-                                                                              GoogleFonts.outfit(
-                                                                            fontWeight:
-                                                                                FontWeight.w500,
-                                                                            fontStyle:
-                                                                                FlutterFlowTheme.of(context).bodyMedium.fontStyle,
-                                                                          ),
-                                                                          color: Theme.of(context).brightness == Brightness.dark
-                                                                              ? const Color(0xFF14181B)
-                                                                              : const Color(0xFF57636C),
-                                                                          fontSize:
-                                                                              14.0,
-                                                                          letterSpacing:
-                                                                              0.0,
-                                                                          fontWeight:
-                                                                              FontWeight.w500,
-                                                                          fontStyle: FlutterFlowTheme.of(context)
-                                                                              .bodyMedium
-                                                                              .fontStyle,
-                                                                        ),
-                                                                  ),
-                                                                ),
-                                                              ],
-                                                            ),
-                                                          ),
-                                                        ),
-                                                      ).animateOnActionTrigger(
-                                                        animationsMap[
-                                                            'containerOnActionTriggerAnimation']!,
-                                                      ),
-                                                    ),
-                                                  ],
-                                                ),
-                                              ),
                                             ),
                                           ),
                                         ),

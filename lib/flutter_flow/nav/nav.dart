@@ -221,7 +221,17 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
         FFRoute(
           name: AddEmployeeWidget.routeName,
           path: AddEmployeeWidget.routePath,
-          builder: (context, params) => const AddEmployeeWidget(),
+          builder: (context, params) => AddEmployeeWidget(
+            isEditMode:
+                params.getParam<bool>('isEditMode', ParamType.bool) ?? false,
+            initialEmployeeId:
+                params.getParam<String>('employeeId', ParamType.String),
+            initialName: params.getParam<String>('fullName', ParamType.String),
+            initialEmail: params.getParam<String>('email', ParamType.String),
+            initialPassword:
+                params.getParam<String>('password', ParamType.String),
+            initialIsAdmin: params.getParam<bool>('isAdmin', ParamType.bool),
+          ),
         ),
         FFRoute(
           name: PatientHomePageWidget.routeName,
@@ -255,7 +265,7 @@ extension NavigationExtensions on BuildContext {
   }) =>
       !mounted || GoRouter.of(this).shouldRedirect(ignoreRedirect)
           ? null
-        : replaceNamed(
+          : replaceNamed(
               name,
               pathParameters: pathParameters,
               queryParameters: queryParameters,
@@ -272,7 +282,7 @@ extension NavigationExtensions on BuildContext {
   }) =>
       !mounted || GoRouter.of(this).shouldRedirect(ignoreRedirect)
           ? null
-        : replaceNamed(
+          : replaceNamed(
               name,
               pathParameters: pathParameters,
               queryParameters: queryParameters,
@@ -471,7 +481,8 @@ class TransitionInfo {
   final Duration duration;
   final Alignment? alignment;
 
-  static TransitionInfo appDefault() => const TransitionInfo(hasTransition: false);
+  static TransitionInfo appDefault() =>
+      const TransitionInfo(hasTransition: false);
 }
 
 class RootPageContext {

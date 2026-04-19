@@ -102,6 +102,20 @@ class _StaffAdminManagementPageWidgetState
     }
   }
 
+  void _openEditEmployee(Employee employee) {
+    context.replaceNamed(
+      AddEmployeeWidget.routeName,
+      queryParameters: {
+        'isEditMode': 'true',
+        'employeeId': employee.employeeId,
+        'fullName': employee.name ?? '',
+        'email': employee.email ?? '',
+        'password': employee.password ?? '',
+        'isAdmin': employee.isAdmin.toString(),
+      },
+    );
+  }
+
   String _initials(String? input) {
     final words = (input ?? '')
         .trim()
@@ -471,10 +485,7 @@ class _StaffAdminManagementPageWidgetState
                                           children: [
                                             InkWell(
                                               onTap: () async {
-                                                showSnackbar(
-                                                  context,
-                                                  'Edit is not available yet',
-                                                );
+                                                _openEditEmployee(employee);
                                               },
                                               child: Container(
                                                 width: 32.0,
